@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Doctor;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,5 +18,6 @@ class DatabaseSeeder extends Seeder
             ClinicSeeder::class,
         ]);
         // \App\Models\Clinic::factory(10)->create();
+        Doctor::factory(10)->create();
     }
 }

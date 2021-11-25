@@ -153,6 +153,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'ex_fees' => 'Examination fees',
+        'clinic_id' => 'Clinic Name',
+],
+
+
+
 
 ];

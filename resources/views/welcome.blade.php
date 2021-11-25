@@ -32,11 +32,12 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-5">
-        <div class="shadow bg-white p-5">
-            @livewire('clinics')
-        </div>
-        {{-- <ul class="nav nav-tabs " id="myTab" role="tablist">
+    {{-- <div class="container mt-5"> --}}
+    <div class="m-5">
+        {{-- @livewire('clinics') --}}
+        {{-- @livewire('doctors') --}}
+        {{-- </div> --}}
+        <ul class="nav nav-tabs " id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="clinic-tab" data-bs-toggle="tab" data-bs-target="#clinic"
                     type="button" role="tab" aria-controls="clinic" aria-selected="true">Clinics</button>
@@ -50,9 +51,11 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade active" id="clinic" role="tabpanel" aria-labelledby="clinic-tab">
                     @livewire('clinics')</div>
-                <div class="tab-pane fade" id="doctor" role="tabpanel" aria-labelledby="doctor-tab"></div>
+                <div class="tab-pane fade" id="doctor" role="tabpanel" aria-labelledby="doctor-tab">
+                    @livewire('doctors')
+                </div>
             </div>
-        </div> --}}
+        </div>
 
     </div>
     @livewireScripts

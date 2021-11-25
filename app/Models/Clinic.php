@@ -11,4 +11,7 @@ class Clinic extends Model
     protected $fillable = [
         'name', 'comment'
     ];
+    function doctors(){
+        return $this->hasMany(Doctor::class,"clinic_id","id");
+    }
 }

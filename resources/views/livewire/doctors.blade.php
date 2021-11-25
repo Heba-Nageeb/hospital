@@ -9,35 +9,45 @@
             <div class="card-body">
 
                 <div class="card-title text-center">
-                    <h2 class="mr-2">{{ __('messages.List of') }} {{ __('messages.Clinics') }}</h2>
+                    <h2 class="mr-2">{{ __('messages.List of') }} {{ __('messages.Doctors') }}</h2>
                 </div>
 
                 <input class="form-control w-100" wire:model="search" type="text"
-                    placeholder="{{ __('messages.Search') }} {{ __('messages.Clinics') }} ..." value="">
+                    placeholder="{{ __('messages.Search') }} {{ __('messages.Doctors') }} ..." value="">
 
                 <div class="e-table">
-                    <div class="table-responsive table-lg mt-3">
+                    <div class="table-responsive mt-3">
                         <table class="table table-bordered">
                             <thead>
                                 <tr class="text-center">
                                     <th class="max-width"> </th>
                                     <th class="max-width">{{ __('messages.Name') }}</th>
+                                    <th class="max-width">{{ __('messages.Phone Number') }}</th>
+                                    <th class="max-width">{{ __('messages.Clinic name') }}</th>
+                                    <th class="max-width">{{ __('messages.Title') }}</th>
+                                    <th class="max-width">{{ __('messages.Shift') }}</th>
+                                    <th class="max-width">{{ __('messages.Examination Fees') }}</th>
                                     <th class="max-width">{{ __('messages.Comment') }}</th>
                                     <th>{{ __('messages.Actions') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($Clinics as $Clinic)
+                                @forelse ($Doctors as $Doctor)
                                     <tr>
-                                        <td class="text-nowrap align-middle">{{ $loop->iteration }}</td>
-                                        <td class="text-nowrap align-middle">{{ $Clinic->name }}</td>
-                                        <td class="text-wrap align-middle">{{ $Clinic->comment }}</td>
+                                        <td class="align-middle">{{ $loop->iteration }}</td>
+                                        <td class="text-wrap align-middle">{{ $Doctor->name }}</td>
+                                        <td class="align-middle">{{ $Doctor->phone }}</td>
+                                        <td class="align-middle">{{ $Doctor->clinics->name }}</td>
+                                        <td class="align-middle">{{ $Doctor->title }}</td>
+                                        <td class="align-middle">{{ $Doctor->shift }}</td>
+                                        <td class="align-middle">{{ $Doctor->ex_fees }}</td>
+                                        <td class="align-middle">{{ $Doctor->comment }}</td>
                                         <td class="text-center align-middle">
                                             <div class="btn-group-md align-top ">
                                                 <a class="btn text-light btn-success badge"
-                                                    wire:click.prevent="edit({{ $Clinic->id }})">{{ __('messages.Edit') }}</a>
+                                                    wire:click.prevent="edit({{ $Doctor->id }})">{{ __('messages.Edit') }}</a>
                                                 <a class="btn text-light btn-danger badge"
-                                                    wire:click.prevent="destroy({{ $Clinic->id }})"><i
+                                                    wire:click.prevent="destroy({{ $Doctor->id }})"><i
                                                         class="fa fa-trash"></i><a>
                                             </div>
                                         </td>
@@ -45,7 +55,7 @@
                                 @empty
                                     <tr>
                                         <td colspan="4">
-                                            {{ __('messages.No Clinics to show') }}
+                                            {{ __('messages.No Doctors to show') }}
                                         </td>
                                     </tr>
                                 @endforelse
@@ -54,15 +64,15 @@
                     </div>
                 </div>
             </div>
-            {{ $Clinics->links('livewire-pagination-links') }}
+            {{ $Doctors->links('livewire-pagination-links') }}
         </div>
         <div class="col-4 mb-3">
             <div class="card bg-light">
                 <div class="card-body text-center">
                     @if ($updateMode)
-                        @include('livewire.clinic.edit')
+                        @include('livewire.doctor.edit')
                     @else
-                        @include('livewire.clinic.create')
+                        @include('livewire.doctor.create')
                     @endif
                 </div>
             </div>
