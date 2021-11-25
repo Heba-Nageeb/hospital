@@ -54,13 +54,19 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="4">
+                                        <td colspan="9">
                                             {{ __('messages.No Doctors to show') }}
                                         </td>
                                     </tr>
                                 @endforelse
                             </tbody>
                         </table>
+                        <div class="form-check my-2">
+                            <input class="form-check-input" type="checkbox" wire:model="sort" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Sort by Examination fees
+                              </label>
+                          </div>
                     </div>
                 </div>
             </div>

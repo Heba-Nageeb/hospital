@@ -22,15 +22,25 @@ class Doctors extends Component
     public $comment;
     public $search;
     public $updateMode = false;
+    public $sort;
+
     use WithPagination;
+
     public function render()
     {
-        $d = Doctor::whereRelation('clinics', 'name', 'like', $this->search . "%")
+        if ($this->sort){
+            $d = Doctor::whereRelation('clinics', 'name', 'like', $this->search . "%")
+            ->orWhere("name", "like", $this->search . "%")
+            //    ->orWhere("shift" ,"like" ,$this->search."%" )
+            //    ->orWhere("title" ,"like" ,$this->search."%" )
+            ->orderBy("ex_fees")->paginate(5);
+        }else{
+            $d = Doctor::whereRelation('clinics', 'name', 'like', $this->search . "%")
             ->orWhere("name", "like", $this->search . "%")
             //    ->orWhere("shift" ,"like" ,$this->search."%" )
             //    ->orWhere("title" ,"like" ,$this->search."%" )
             ->paginate(5);
-
+        }
         $c = Clinic::get();
         return view('livewire.doctors', ["Doctors" => $d, "Clinics" => $c]);
 
