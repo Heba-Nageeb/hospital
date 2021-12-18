@@ -105,7 +105,7 @@ class Doctors extends Component
     public function update($id)
     {
         $this->validate([
-            "name" => "required|alpha",
+            "name" => "required",
             "phone" => "required",
             "clinic_id" => "required",
             "shift" => "required",

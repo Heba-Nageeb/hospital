@@ -25,5 +25,6 @@ return[
 "Clinic name"=>"اسم العيادة",
 "Title"=>"الدرجة العلمية",
 "Shift"=>"فترة العمل",
-"Examination Fees"=>"سعر الكشف"
+"Examination Fees"=>"سعر الكشف",
+'Dashboard'=>'لوحة البيانات'
 ];

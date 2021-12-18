@@ -3,7 +3,7 @@
 
 <div class="mb-1">
     <label>{{ __('messages.Name') }}</label>
-    <input class="form-control" type="text" wire:model="name" value="{{ old('name') }}">
+    <input class="form-control" type="text" wire:model.lazy="name" value="{{ old('name') }}">
     @error('name')
         <small id="helpId" class="text-danger">{{ $message }}</small>
     @enderror
@@ -11,7 +11,7 @@
 
 <div class="mb-1">
     <label>{{ __('messages.Phone Number') }}</label>
-    <input class="form-control" type="number" wire:model="phone" value="{{ old('phone') }}">
+    <input class="form-control" type="number" wire:model.lazy="phone" value="{{ old('phone') }}">
     @error('phone')
         <small id="helpId" class="text-danger">{{ $message }}</small>
     @enderror
@@ -57,14 +57,14 @@
 
 <div class="mb-1">
     <label>{{ __('messages.Examination Fees') }}</label>
-    <input class="form-control" type="number" wire:model="ex_fees" value="{{ old('ex_fees') }}">
+    <input class="form-control" type="number" wire:model.lazy="ex_fees" value="{{ old('ex_fees') }}">
     @error('ex_fees')
         <small id="helpId" class="text-danger">{{ $message }}</small>
     @enderror
 </div>
 
 <label>{{ __('messages.Comment') }}</label>
-<input class="form-control" type="text" wire:model="comment" value="{{ old('comment') }}">
+<input class="form-control" type="text" wire:model.lazy="comment" value="{{ old('comment') }}">
 
 <div class="my-2">
     <button class="btn btn-success" wire:click.prevent="store()">{{ __('messages.Save') }}</button>

@@ -25,5 +25,7 @@ return[
 "Clinic name"=>"Clinic name",
 "Title"=>"Title",
 "Shift"=>"Shift",
-"Examination Fees"=>"Examination Fees"
+"Examination Fees"=>"Examination Fees",
+'Dashboard'=>'Dashboard'
+
 ];
