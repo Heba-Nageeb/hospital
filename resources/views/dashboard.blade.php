@@ -15,6 +15,10 @@
                 <button class="nav-link" id="doctor-tab" data-bs-toggle="tab" data-bs-target="#doctor"
                     type="button" role="tab" aria-controls="doctor" aria-selected="false">{{ __('messages.Doctors') }}</button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="res-tab" data-bs-toggle="tab" data-bs-target="#res"
+                    type="button" role="tab" aria-controls="res" aria-selected="false">{{ __('messages.Reservations') }}</button>
+            </li>
         </ul>
         <div class="shadow bg-white p-5">
             <div class="tab-content" id="myTabContent">
@@ -22,6 +26,9 @@
                     @livewire('clinics')</div>
                 <div class="tab-pane fade" id="doctor" role="tabpanel" aria-labelledby="doctor-tab">
                     @livewire('doctors')
+                </div>
+                <div class="tab-pane fade" id="res" role="tabpanel" aria-labelledby="res-tab">
+                    @livewire('reservations')
                 </div>
             </div>
         </div>

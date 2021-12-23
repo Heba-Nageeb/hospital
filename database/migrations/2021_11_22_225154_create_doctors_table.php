@@ -17,7 +17,7 @@ class CreateDoctorsTable extends Migration
             $table->id();
             $table->string("name");
             $table->string("phone");
-            $table->foreignId("clinic_id")->constrained("clinics");
+            $table->foreignId("clinic_id")->constrained("clinics")->onUpdate("CASCADE")->onDelete("CASCADE");
             $table->enum("shift" ,["morning" ,"evening"]);
             $table->enum("title" ,["professor" ,"consultant","specialist"]);
             $table->decimal("ex_fees");

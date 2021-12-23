@@ -13,8 +13,11 @@ class Doctor extends Model
         "name","comment","phone","clinic_id","shift","title","ex_fees"
     ];
 
-
     function clinics() {
         return $this->belongsTo(Clinic::class,"clinic_id","id") ;
+    }
+
+    function reservations(){
+        return $this->hasMany(Reservation::class,"doctor_id","id");
     }
 }

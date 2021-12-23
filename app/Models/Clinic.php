@@ -14,4 +14,8 @@ class Clinic extends Model
     function doctors(){
         return $this->hasMany(Doctor::class,"clinic_id","id");
     }
+
+    function reservations(){
+        return $this->hasMany(Reservation::class,"clinic_id","id");
+    }
 }
